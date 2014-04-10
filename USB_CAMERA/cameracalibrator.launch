@@ -1,0 +1,8 @@
+<launch>
+    <node launch-prefix="gdb -ex run --args" name="cameracalibrator" pkg="ptam" type="cameracalibrator" clear_params="true" output="screen">
+	    <remap from="image" to="image_converter/output_video" />
+            <remap from="pose" to="pose"/>
+	    <rosparam file="$(find ptam)/PtamFixParams.yaml"/>
+    </node>
+</launch>
+
